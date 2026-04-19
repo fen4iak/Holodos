@@ -55,7 +55,7 @@ ROOT_URLCONF = 'holodos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'holodos/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
