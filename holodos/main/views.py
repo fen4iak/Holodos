@@ -4,6 +4,10 @@ from .forms import RegisterForm, LoginForm
 
 from django.contrib.auth import authenticate, login
 
+class HomeView(View):
+    def get(self, request):
+        return render(request, template_name='home.html')
+
 class RegisterView(View):
     def get(self, request):
         form = RegisterForm()
@@ -15,7 +19,7 @@ class RegisterView(View):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
-            return redirect('index')
+            return redirect('login')
         return render(request, template_name='register.html', context={'form': form})
 
 
@@ -32,7 +36,7 @@ class LoginView(View):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('index')
+                return redirect('home')
             else:
                 form.add_error(None, 'Неверный логин или пароль')
         return render(request, 'login.html', {'form': form})
