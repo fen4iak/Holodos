@@ -1,6 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <title>Вход</title>
 </head>
@@ -9,7 +11,9 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Войти</button>
+    <p> </p>
+    <p>Нету аккаунта? <a href="http://127.0.0.1:8000/register/">Зарегистрироваться</a></p>
 </form>
-<p>Нету аккаунта? <a href="http://127.0.0.1:8000/register/">Зарегистрироваться</a></p>
+
 </body>
 </html>
