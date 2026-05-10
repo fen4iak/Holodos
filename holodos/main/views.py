@@ -1,12 +1,18 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from .forms import RegisterForm, LoginForm
+from main.models import Holodos
 
 from django.contrib.auth import authenticate, login
 
+
+
+
 class HomeView(View):
     def get(self, request):
+        products = Holodos.objects.all()
         return render(request, template_name='home.html')
+
 
 class RegisterView(View):
     def get(self, request):

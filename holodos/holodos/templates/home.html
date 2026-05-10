@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>тест</title>
+    <title>Холодильники</title>
 </head>
 <body>
-    <h1>Привет</h1>
+    <h1>Холодильники</h1>
+    {% for product in products %}
+        <div>
+            <h3>{{ holodoss.holodos }}</h3>
+            <p>Цена {{ holodoss.price }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
