@@ -46,3 +46,7 @@ class LoginView(View):
             else:
                 form.add_error(None, 'Неверный логин или пароль')
         return render(request, 'login.html', {'form': form})
+
+class AboutView(View):
+    def get(self, request):
+        return render(request, 'about.html')
