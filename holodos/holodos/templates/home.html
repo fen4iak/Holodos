@@ -1,16 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta charset="UTF-8">
     <title>Холодильники</title>
 </head>
 <body>
-    <h1>Холодильники</h1>
-    {% for product in products %}
-        <div>
-            <h3>{{ holodoss.holodos }}</h3>
-            <p>Цена {{ holodoss.price }}</p>
-        </div>
-    {% endfor %}
+    <main class="c">
+        <h1>Холодильники будут потом</h1>
+    </main>
+    <footer class="about">
+        <h3>О нас</h3>
+        <p>Лучшие</p>
+    </footer>
 </body>
 </html>
